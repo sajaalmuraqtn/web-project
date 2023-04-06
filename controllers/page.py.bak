@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+# try something like
+def index(): return dict(message="hello from page.py")
+
+# ---- example home page ----
+def home():
+    return locals()
+
+
+def Hellow():
+    students = db.executesql("SELECT * FROM students", as_dict=True)
+    return dict(students= students)

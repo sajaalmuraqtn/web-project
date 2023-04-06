@@ -1,0 +1,72 @@
+{{extend 'layout.html'}}
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{{for student in students:}}
+	    <tr>
+	      <td>{{=student['id']}}</td>
+	      <td>{{=student['first_name']}}</td>
+	      <td>{{=student['email']}}</td>
+	      <td><a href="delete?id={{=student['id']}}">delete</a></td>
+	      <td></td>
+	    </tr>
+    {{pass}}
+  </tbody>
+</table>
+ <form class="form-horizontal" action='addregister' method='get'>
+
+                            <div class="row px-3">
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">First Name</h6>
+                                </label>
+                                <input class="mb-4" type="text" name="firstName" placeholder="Enter a FirstName">
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Last Name</h6>
+                                </label>
+                                <input class="mb-4" type="text" name="lastName" placeholder="Enter a LastName">
+                            </div>
+                         
+                            <div class="row px-3">
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Email Address</h6>
+                                </label>
+                                <input class="mb-4" type="text" name="email" placeholder="Enter a valid email address">
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Password</h6>
+                                </label>
+                                <input type="password" name="password" placeholder="Enter password">
+                            </div>
+                            <div class="row px-3">
+                                <label class="mb-1">
+                                    <h6 class="mb-0 text-sm">Reset Password</h6>
+                                </label>
+                                <input type="password" name="resetPassword" placeholder="Enter reset password">
+                            </div>
+
+                            <div class="row mb-3 px-3">
+                                <button type="submit" class="btn btn-blue text-center mt-1">Register</button>
+                            </div>
+                            <div class="row mb-4 px-3">
+                                <small class="font-weight-bold">Do have already an account? 
+                                    <a class="text-danger " href="login.html">Login</a></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    
+</form>

@@ -1,0 +1,29 @@
+{{extend 'layout.html'}}
+
+        <div class="container">
+
+            <div class="card card0 ">
+              <table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{for student in students:}}
+    <tr>
+      <td>{{=student['id']}}</td>
+      <td>{{=student['first_name']}}</td>
+      <td>{{=student['last_name']}}</td>
+      <td>{{=student['email']}}</td>
+    </tr>
+    {{pass}}
+    
+  </tbody>
+</table>
+
+            </div>
+        </div>

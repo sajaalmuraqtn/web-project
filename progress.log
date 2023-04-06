@@ -1,0 +1,10 @@
+[2023-03-31 18:43:03] START
+[2023-03-31 18:43:03] EDIT welcome/controllers/default.py: 0
+[2023-04-04 22:09:10] CREATE form.py: 0
+[2023-04-04 22:09:32] EDIT welcome/controllers/form.py: 3
+[2023-04-04 22:09:41] EDIT welcome/views/form/Hellow.html: 0
+[2023-04-05 03:17:28] EDIT webProject/views/form/register.html: 0
+[2023-04-05 11:46:39] EDIT webProject/controllers/form.py: 0
+[2023-04-05 11:46:48] EDIT webProject/views/form/register.html: 0
+[2023-04-05 13:23:40] EDIT webProject/views/page/addcourses.html: -21
+[2023-04-05 13:24:05] EDIT webProject/views/page/showcourses.html: -21
