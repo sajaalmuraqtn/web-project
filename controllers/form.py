@@ -3,8 +3,10 @@
 def index(): return dict(message="hello from form.py")
 
 def Hellow():
-    students = db.executesql("SELECT * FROM students", as_dict=True)
-    return dict(students= students)
+    # courses = db.executesql("SELECT * FROM courses", as_dict=True)
+    #  return dict(courses= courses) 
+      return locals()
+
 # ---- example login page ----
 def login():
     return locals()
@@ -17,17 +19,34 @@ def register():
     
 # ---- example addregister query ----
 def addregister():
-    if request.vars['FirstName']:
-        first_name = request.vars['FirstName']
-        last_name = request.vars['LastName']
-        email = request.vars['email']
-        password = request.vars['password']
-        reset_password_key = request.vars['resetPassword']
+    # if request.vars['FirstName']:
+    #     first_name = request.vars['FirstName']
+    #     last_name = request.vars['LastName']
+    #     email = request.vars['email']
+    #     password = request.vars['password']
+    #     reset_password_key = request.vars['resetPassword']
 
-        db.executesql("INSERT INTO students (first_name, last_name, email,password,reset_password_key) VALUES (%s, %s, %s, %s,%s)", placeholders=(first_name,last_name, email,password,reset_password_key))
-    else:
-        redirect(URL('register'))
+#         db.executesql("INSERT INTO students (first_name, last_name, email,password,reset_password_key) VALUES (%s, %s, %s, %s,%s)", placeholders=(first_name,last_name, email,password,reset_password_key))
+    # else:
+    #     redirect(URL('register'))
 
     return locals()
+
+# ---- example addcourses page ----
+def addcourses(): 
+    
+    return locals()
+
+#add courses page
+
+def insertCourses(): 
+        if request.vars['courseName']:
+           code = request.vars['courseCode']
+           name = request.vars['courseName']
+           description = request.vars['courseDescription']
+   
+           db.executesql("INSERT INTO courses (code, name,description) VALUES (%s, %s,%s)", placeholders=(code, name,description))
+        else:
+           redirect(URL('addcourses'))
 
 

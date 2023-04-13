@@ -4,20 +4,16 @@ def index(): return dict(message="hello from page.py")
 
 # ---- example home page ----
 def home():
-    students = db.executesql("SELECT * FROM students", as_dict=True)
-    return dict(students= students)
+ 	return dict(message="hello from page.py")
+
 
 def Hellow():
-    students = db.executesql("SELECT * FROM students", as_dict=True)
-    return dict(students= students)
+ 
+ 	return dict(message="hello from page.py")
 
 
-#add courses page
-
-def addcourses(): 
-	return dict(message="hello from page.py")
 
 #show courses page
 def showcourses(): 
-	return dict(message="hello from page.py")
-
+   courses = db.executesql("SELECT * FROM courses", as_dict=True)
+   return dict(courses= courses)

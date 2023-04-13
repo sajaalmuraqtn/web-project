@@ -1,5 +1,27 @@
 {{extend 'layout.html'}}
 
-        <div class="container">
-           <h3>show courses</h3>
-        </div>
+ <form class="d-flex" role="search">
+        <input class="form-control " type="search" placeholder="Search Course" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+ </form>
+<table class="table table-striped mt-5">
+  <thead>
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Course Name</th>
+      <th scope="col">Course Description</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+  	{{for course in courses:}}
+	    <tr>
+	      <td>{{=course['code']}}</td>
+	      <td>{{=course['name']}}</td>
+	      <td>{{=course['description']}}</td>
+	      <td><a  class="btn btn-info">Add</a></td>
+	      <td></td>
+	    </tr>
+    {{pass}}
+  </tbody>
+</table>
