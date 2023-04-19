@@ -14,6 +14,6 @@ def Hellow():
 
 
 #show courses page
-def showcourses(): 
-   courses = db.executesql("SELECT * FROM courses", as_dict=True)
-   return dict(courses= courses)
+# def showcourses(): 
+#    courses = db.executesql("SELECT * FROM courses", as_dict=True)
+#    return dict(courses= courses)
