@@ -30,16 +30,16 @@ if not request.env.web2py_runtime_gae:
     # ---------------------------------------------------------------------
     # if NOT running on Google App Engine use SQLite or other DB
     # ---------------------------------------------------------------------
-    # db = DAL("mysql://root:saja@localhost:3306/register",
-    #          pool_size=configuration.get('db.pool_size'),
+    # db = DAL("mysql://root:saja@localhost:3306/regeistersystem",
+    #          pool_size=configuration.get('db.'),
     #          migrate_enabled=configuration.get('db.migrate'),
     #          check_reserved=['all'])
-    db = DAL("mysql://root:saja@localhost:3306/register",
+    db = DAL("mysql://root:saja@localhost:3306/myreg",
              pool_size=configuration.get('db.pool_size'),
              migrate_enabled=False,
              check_reserved=['all'])
 else:
-    # ---------------------------------------------------------------------
+    # -----------------------------------------------------s----------------
     # connect to Google BigTable (optional 'google:datastore://namespace')
     # ---------------------------------------------------------------------
     db = DAL('google:datastore+ndb')

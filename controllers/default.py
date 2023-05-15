@@ -6,8 +6,20 @@
 
 # ---- example index page ----
 def index():
-    response.flash = T("Hello World")
-    return dict(message=T('Welcome to web2py!')) 
+    response.flash = T("Hello Students ")
+
+    return locals()
+
+def set_session():
+    session.auth_user.name=auth_user.name
+    return locals()
+
+
+
+def get_session():
+    session.auth_user.name=auth_user.name
+    return locals()
+
 
 def Hellow():
     students = db.executesql("SELECT * FROM students", as_dict=True)

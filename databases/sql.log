@@ -569,3 +569,627 @@ CREATE TABLE `courses`(
     `capacity` INTEGER,
     `scheduleid` INTEGER,
     PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-07T14:07:28.837475
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-07T14:09:11.192110
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:24:16.087355
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:24:18.038504
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:30:11.555303
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:31:11.366012
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:31:15.927247
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:31:55.739840
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(references courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:32:41.448400
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:33:23.560369
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:49:26.090202
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T14:57:56.829627
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-08T15:21:52.455923
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-08T15:21:52.722503
+CREATE TABLE `auth_group`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `role` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-08T15:21:52.987742
+CREATE TABLE `auth_membership`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-08T15:21:53.304246
+CREATE TABLE `auth_permission`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    `name` VARCHAR(512),
+    `table_name` VARCHAR(512),
+    `record_id` INTEGER,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-08T15:21:53.539472
+CREATE TABLE `auth_event`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `time_stamp` DATETIME,
+    `client_ip` VARCHAR(512),
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `origin` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-08T15:21:53.775887
+CREATE TABLE `auth_cas`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `created_on` DATETIME,
+    `service` VARCHAR(512),
+    `ticket` VARCHAR(512),
+    `renew` CHAR(1),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-08T15:21:54.088193
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:44:39.863006
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:44:46.700169
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:47:42.433208
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:47:44.129816
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:49:57.572348
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:51:02.695740
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:51:05.364598
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:52:08.145406
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:52:10.896029
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:52:34.970677
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:52:36.704192
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:53:20.703000
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:53:23.493157
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:54:10.992294
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:54:37.409436
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:54:44.467990
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T10:54:57.223835
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T20:37:42.447266
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:37:44.890169
+CREATE TABLE `auth_group`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `role` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:37:45.088952
+CREATE TABLE `auth_membership`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:37:45.573889
+CREATE TABLE `auth_permission`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    `name` VARCHAR(512),
+    `table_name` VARCHAR(512),
+    `record_id` INTEGER,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:37:45.939933
+CREATE TABLE `auth_event`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `time_stamp` DATETIME,
+    `client_ip` VARCHAR(512),
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `origin` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:37:46.282653
+CREATE TABLE `auth_cas`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `created_on` DATETIME,
+    `service` VARCHAR(512),
+    `ticket` VARCHAR(512),
+    `renew` CHAR(1),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:37:46.536629
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T20:54:01.488480
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:54:02.173852
+CREATE TABLE `auth_group`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `role` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:54:02.554224
+CREATE TABLE `auth_membership`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:54:03.089276
+CREATE TABLE `auth_permission`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    `name` VARCHAR(512),
+    `table_name` VARCHAR(512),
+    `record_id` INTEGER,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:54:03.423421
+CREATE TABLE `auth_event`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `time_stamp` DATETIME,
+    `client_ip` VARCHAR(512),
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `origin` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:54:03.728776
+CREATE TABLE `auth_cas`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `created_on` DATETIME,
+    `service` VARCHAR(512),
+    `ticket` VARCHAR(512),
+    `renew` CHAR(1),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T20:54:04.142848
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T20:54:06.532304
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T20:54:10.645107
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T22:07:47.505634
+CREATE TABLE `auth_user`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `first_name` VARCHAR(128),
+    `last_name` VARCHAR(128),
+    `email` VARCHAR(512),
+    `password` VARCHAR(512),
+    `registration_key` VARCHAR(512),
+    `reset_password_key` VARCHAR(512),
+    `registration_id` VARCHAR(512),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T22:07:49.196782
+CREATE TABLE `auth_group`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `role` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T22:07:50.083900
+CREATE TABLE `auth_membership`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T22:07:50.913597
+CREATE TABLE `auth_permission`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `group_id` INT  , INDEX `group_id__idx` (`group_id`), FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE CASCADE,
+    `name` VARCHAR(512),
+    `table_name` VARCHAR(512),
+    `record_id` INTEGER,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T22:07:51.402516
+CREATE TABLE `auth_event`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `time_stamp` DATETIME,
+    `client_ip` VARCHAR(512),
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `origin` VARCHAR(512),
+    `description` LONGTEXT,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T22:07:51.853502
+CREATE TABLE `auth_cas`(
+    `id` INT AUTO_INCREMENT NOT NULL,
+    `user_id` INT  , INDEX `user_id__idx` (`user_id`), FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE CASCADE,
+    `created_on` DATETIME,
+    `service` VARCHAR(512),
+    `ticket` VARCHAR(512),
+    `renew` CHAR(1),
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB CHARACTER SET utf8;
+success!
+timestamp: 2023-05-09T22:07:52.349445
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T22:07:54.068060
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T22:08:33.592407
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
+timestamp: 2023-05-09T22:08:35.521713
+CREATE TABLE `courses`(
+    `code` VARCHAR(512) NOT NULL,
+    `name` VARCHAR(512),
+    `description` VARCHAR(512),
+    `prerequisites` VARCHAR(reference courses),
+    `instructor` VARCHAR(512),
+    `capacity` INTEGER,
+    `scheduleid` INTEGER,
+    PRIMARY KEY(`code`))  ENGINE=InnoDB CHARACTER SET utf8;
